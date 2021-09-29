@@ -1,5 +1,6 @@
 import {CommonActionTypeForApp, InferActionType} from "../App/store";
 import {dataBase, WidgetType} from "./dataBase/database";
+import {updateObjectInArray} from "./utils/object-helpers";
 
 
 const initialState = {
@@ -10,14 +11,15 @@ export const MainReduser =
     (state: InitialStateType = initialState, action: CommonActionTypeForApp): InitialStateType => {
         switch (action.type) {
             case "MAIN/LIKE":
+                // return {...state, widget: updateObjectInArray(state.widget, action.id, 'likes', action.item)}
                 return {...state,
-                    widget: state.widget.map(i => i.id === action.id ? {...i, likes: i.likes+action.item}  : i)}
+                    widget: state.widget.map(i => i.id === action.id ? {...i, likes: i.likes + action.item}  : i)}
             case "MAIN/DIS-LIKE":
                 return {...state,
-                    widget: state.widget.map(i => i.id === action.id ? {...i, dislikes: i.disLike+action.item}  : i)}
+                    widget: state.widget.map(i => i.id === action.id ? {...i, dislikes: i.disLike + action.item}  : i)}
             case "MAIN/SUM":
                 return {...state,
-                    widget: state.widget.map(i => i.id === action.id ? {...i, sum: action.sum}  : i)
+                    widget: state.widget.map(i => i.id === action.id ? {...i, sum: i.sum + action.sum}  : i)
                 }
             default:
                 return state;
@@ -27,8 +29,8 @@ export const MainReduser =
 
 // actions
 export const actionsMainCrypto = {
-    setLike: (id: string, item: number) => ({type: "MAIN/LIKE", item, id} as const),
-    setDisLike: (id: string, item: number) => ({type: "MAIN/DIS-LIKE", item, id} as const),
+    setLike: (id: string, item: number) => ({type: "MAIN/LIKE", id, item} as const),
+    setDisLike: (id: string, item: number) => ({type: "MAIN/DIS-LIKE", id, item} as const),
     setSum: (id: string, sum: number) => ({type: "MAIN/SUM", id, sum} as const),
 }
 
