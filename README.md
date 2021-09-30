@@ -1,2 +1,2 @@
-SPA spotify
+simple SPA spotify
 
