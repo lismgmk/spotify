@@ -6,6 +6,8 @@ import {nanoid} from "nanoid";
 import {WidgetType} from "../../../Redusers/dataBase/database";
 import {actionsMainCrypto} from "../../../Redusers/MainReduser";
 import {LikeSvg} from "../../../assets/icon/LikeSVG";
+import {CalendarSvg} from "../../../assets/icon/CalendarSVG";
+import {PlusSvg} from "../../../assets/icon/PlusSVG";
 
 
 
@@ -26,19 +28,19 @@ export const TableList: React.FC = () => {
             <table className={s.table__block}>
                 <thead>
                 <tr>
-                    <th className={s.col1}>Plus</th>
-                    <th className={s.col2}>TITLE</th>
-                    <th className={s.col3}>ARTIST</th>
-                    <th className={s.col4}>ALBUM</th>
-                    <th className={s.col5}>DATE</th>
-                    <th className={s.col6}>LIKE</th>
-                    <th className={s.col7}>DISLIKE</th>
+                    <th className={s.col1}></th>
+                    <th className={s.col2}><p>TITLE</p></th>
+                    <th className={s.col3}><p>ARTIST</p></th>
+                    <th className={s.col4}><p>ALBUM</p></th>
+                    <th className={s.col5 }><CalendarSvg/></th>
+                    <th className={s.col6}><p>LIKE</p></th>
+                    <th className={s.col7}><p>DISLIKE</p></th>
                 </tr>
                 </thead>
                 <tbody>
                 {sortWidget.map((i) => {
                     return <tr key={nanoid()}>
-                        <th className={s.col1}>+</th>
+                        <th className={s.col1}><PlusSvg/></th>
                         <th className={s.col2}>{i.title}</th>
                         <th className={s.col3}>{i.artist}</th>
                         <th className={s.col4}>{i.album}</th>
@@ -51,8 +53,6 @@ export const TableList: React.FC = () => {
                                 }}
                             >
                             <LikeSvg deg={'0'}/>
-
-
                             </div>
                         </th> <th className={s.col7}>
                             <div

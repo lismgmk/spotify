@@ -4,6 +4,7 @@ import {AppRootStateType} from "../../App/store";
 import {WidgetType} from "../../Redusers/dataBase/database";
 import {TableList} from "./TableList/TableList";
 import {Header} from "./Header/Header";
+import {SearchSvg} from "../../assets/icon/SearchSVG";
 // import s from "./Main.module.scss";
 
 const Main = () => {
@@ -15,6 +16,7 @@ const Main = () => {
         <div>
 
             <Header/>
+            <SearchSvg/>
             <div>
                 Filter
             </div>

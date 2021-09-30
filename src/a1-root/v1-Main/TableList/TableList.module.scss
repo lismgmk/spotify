@@ -1,5 +1,5 @@
 .table {
-  position: relative;
+  //position: relative;
   overflow: hidden;
   align-items: center;
 
@@ -10,7 +10,6 @@
 
   thead {
     display: block;
-    background: #ECECF9;
 
     tr {
       display: table;
@@ -19,7 +18,7 @@
   }
 
   tbody {
-    position: absolute;
+    //position: absolute;
     top: 50px;
     bottom: 0;
     height: 100%;
@@ -32,11 +31,9 @@
       width: 100%;
 
       &:nth-child(odd) {
-        background: #F8F7FD;
       }
 
       a {
-        color: black;
         &:hover {
           text-decoration: underline;
         }
@@ -46,7 +43,9 @@
 
   tr th {
     height: 65px;
+
   }
+
 
   &__modal {
     h2 {
@@ -58,7 +57,9 @@
     }
   }
 }
-
+tr{
+  border-bottom: 1px solid red;
+}
 .col1 {
   width: 10%;
 }

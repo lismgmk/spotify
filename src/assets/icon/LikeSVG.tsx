@@ -1,18 +1,17 @@
-import React, {useState} from "react";
+import React from "react";
+import s from "./svgStyle.module.scss";
 
 type LikeSvgType = {
     deg: string
 }
 
 export const LikeSvg: React.FC <LikeSvgType>= (props) => {
-    return <div style={{color: 'red'}}>
-        <svg style={{width: '28px',
-            height: '28px',
-            cursor: 'pointer',
-            transform: `rotate(${props.deg}deg)`}}
+    return <div className={s.svg}>
+        <svg style={{
+            transform: `rotate(${props.deg}deg)`}
+        }
              version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
              x="0px" y="0px" viewBox="0 0 28 28"
-             fill-opacity={'1'}
         >
             <path d="M27.923,12.396c-0.498-1.633-2.367-2.403-3.287-2.584c-0.643-0.125-1.65-0.188-3.09-0.188
 		c-0.711,0-1.443,0.016-2.124,0.036c1.495-1.563,2.871-3.404,3.095-3.706c0.065-0.09,0.119-0.189,0.15-0.298
