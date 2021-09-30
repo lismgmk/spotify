@@ -2,12 +2,14 @@
   display: flex;
   justify-content: space-between;
   &__picture {
+    width: 20%;
     img {
 
     }
   }
 
   &__title {
+    width: 80%;
     span {
 
     }
@@ -27,10 +29,15 @@
     }
 
     &__block {
-
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      .block_button{
+        margin-right: 20px;
+      }
     }
   }
 
 }
 
->
+

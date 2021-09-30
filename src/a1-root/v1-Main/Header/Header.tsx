@@ -19,10 +19,12 @@ export const Header: React.FC = () => {
                 <p>Some description</p>
                 <p>some text <span>white text</span> some text</p>
                 <div className={s.header__title__block}>
-                    <Button color={'green'} rounded width={90}>PAUSE</Button>
-                    <span>Edit pick</span>
+                   <div className={s.block_button}>
+                       <Button color={'green'} rounded width={90}>PAUSE</Button>
+                   </div>
+                    <ThreeDotsSvg/>
                 </div>
-                <ThreeDotsSvg/>
+
             </div>
         </div>
     )
