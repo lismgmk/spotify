@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import s from "./TableList.module.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../../App/store";
 import {nanoid} from "nanoid";
 import {WidgetType} from "../../../Redusers/dataBase/database";
 import {actionsMainCrypto} from "../../../Redusers/MainReduser";
+import {LikeSvg} from "../../../assets/icon/LikeSVG";
 
 
 
 export const TableList: React.FC = () => {
+
+
 
     const dispatch = useDispatch();
 
@@ -41,25 +44,29 @@ export const TableList: React.FC = () => {
                         <th className={s.col4}>{i.album}</th>
                         <th className={s.col5}>{i.date}</th>
                         <th className={s.col6}>
-                            <button
-                            onClick={() => {
-                                dispatch(actionsMainCrypto.setLike(i.id, 1))
-                                dispatch(actionsMainCrypto.setSum(i.id, 1))
-                            }
-                            }>
-                                like
-                            </button>
+                            <div
+                                onClick={() => {
+                                    dispatch(actionsMainCrypto.setLike(i.id, 1))
+                                    dispatch(actionsMainCrypto.setSum(i.id, 1))
+                                }}
+                            >
+                            <LikeSvg deg={'0'}/>
+
+
+                            </div>
+                        </th> <th className={s.col7}>
+                            <div
+                                onClick={() => {
+                                    dispatch(actionsMainCrypto.setLike(i.id, 1))
+                                    dispatch(actionsMainCrypto.setSum(i.id, -1))
+                                }}
+                            >
+                            <LikeSvg deg={'180'}/>
+
+
+                            </div>
                         </th>
-                        <th className={s.col7}>
-                            <button
-                            onClick={() => {
-                                dispatch(actionsMainCrypto.setDisLike(i.id, 1))
-                                dispatch(actionsMainCrypto.setSum(i.id, -1))
-                            }
-                            }>
-                                like
-                            </button>
-                        </th>
+
 
 
                     </tr>
