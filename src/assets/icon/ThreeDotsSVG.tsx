@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import s from "./svgStyle.module.scss"
 
 
@@ -7,7 +7,6 @@ export const ThreeDotsSvg: React.FC = () => {
         <svg
              version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 512 512"
-             fill-opacity={'1'}
              fill={'white'}
         >
             <path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M256,480

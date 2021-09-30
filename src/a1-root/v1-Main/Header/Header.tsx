@@ -5,23 +5,26 @@ import {Button} from "../../common/Button/Button";
 import img from '../../../assets/image/photo.png';
 
 
-
 export const Header: React.FC = () => {
 
     return (
         <div className={s.header}>
-            <div className={s.header__picture}>
-                <img src={img} />
+            <div className={s.picture}>
+                <img src={img} alt={'Album'}/>
             </div>
-            <div className={s.header__title}>
+            <div className={s.title}>
                 <span>Little text</span>
                 <h1>Main text</h1>
                 <p>Some description</p>
-                <p>some text <span>white text</span> some text</p>
-                <div className={s.header__title__block}>
-                   <div className={s.block_button}>
-                       <Button color={'green'} rounded width={90}>PAUSE</Button>
-                   </div>
+                <div className={s.title_block}>
+                    <p>some text </p>
+                    <span>{`white text`}</span>
+                    <p> some text</p>
+                </div>
+                <div className={s.block}>
+                    <div className={s.block_button}>
+                        <Button color={'green'} rounded width={90}>PAUSE</Button>
+                    </div>
                     <ThreeDotsSvg/>
                 </div>
 

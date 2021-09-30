@@ -1,6 +1,5 @@
 import {CommonActionTypeForApp, InferActionType} from "../App/store";
 import {dataBase, WidgetType} from "./dataBase/database";
-import {updateObjectInArray} from "./utils/object-helpers";
 
 
 const initialState = {
@@ -11,15 +10,19 @@ export const MainReduser =
     (state: InitialStateType = initialState, action: CommonActionTypeForApp): InitialStateType => {
         switch (action.type) {
             case "MAIN/LIKE":
-                // return {...state, widget: updateObjectInArray(state.widget, action.id, 'likes', action.item)}
-                return {...state,
-                    widget: state.widget.map(i => i.id === action.id ? {...i, likes: i.likes + action.item}  : i)}
+                return {
+                    ...state,
+                    widget: state.widget.map(i => i.id === action.id ? {...i, likes: i.likes + action.item} : i)
+                }
             case "MAIN/DIS-LIKE":
-                return {...state,
-                    widget: state.widget.map(i => i.id === action.id ? {...i, dislikes: i.disLike + action.item}  : i)}
+                return {
+                    ...state,
+                    widget: state.widget.map(i => i.id === action.id ? {...i, dislikes: i.disLike + action.item} : i)
+                }
             case "MAIN/SUM":
-                return {...state,
-                    widget: state.widget.map(i => i.id === action.id ? {...i, sum: i.sum + action.sum}  : i)
+                return {
+                    ...state,
+                    widget: state.widget.map(i => i.id === action.id ? {...i, sum: i.sum + action.sum} : i)
                 }
             default:
                 return state;

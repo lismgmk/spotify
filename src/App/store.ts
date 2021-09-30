@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+import {combineReducers, createStore} from "redux";
 import {MainActionType, MainReduser} from "../Redusers/MainReduser";
 
 

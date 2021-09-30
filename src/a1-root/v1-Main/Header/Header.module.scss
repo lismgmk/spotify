@@ -1,43 +1,43 @@
 .header {
   display: flex;
   justify-content: space-between;
-  &__picture {
-    width: 20%;
-    img {
+  max-width: 90vw;
+  width: 100%;
+  margin: 15px 0;
 
+  .picture {
+    img {
+      border: 5px solid white;
     }
   }
 
-  &__title {
+  .title {
     width: 80%;
-    span {
-
-    }
+    margin-left: 20px;
 
     h1 {
-
+      margin: 10px 0;
     }
 
-    p {
+    .title_block {
+      margin: 10px 0;
+      display: block;
 
-    }
-
-    p {
-      span {
-
+      p {
+        display: initial;
       }
     }
 
-    &__block {
-      margin-top: 20px;
+    .block {
       display: flex;
+      margin-top: 20px;
       align-items: center;
-      .block_button{
+
+      .block_button {
         margin-right: 20px;
       }
     }
   }
-
 }
 
 
